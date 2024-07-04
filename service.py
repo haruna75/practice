@@ -32,7 +32,7 @@ def compound_interest ( principal, rate, period ):
         return 'エラー：期間には整数を指定してください。'
     
     principal = int (principal)
-    rate = int (rate)
+    rate = float (rate)
     period = int (period)
 
     if principal < 0:
