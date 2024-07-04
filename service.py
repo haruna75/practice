@@ -30,6 +30,15 @@ def compound_interest ( principal, rate, period ):
     
     if not is_int(period):
         return 'エラー：期間には整数を指定してください。'
+    
+    if principal < 0:
+        return 'エラー：元本にマイナスの数字を設定しないでください。'
+    
+    if rate < 0:
+        return 'エラー：複利にマイナスの数字を設定しないでください。'
+    
+    if period < 0:
+        return 'エラー：期間にマイナスの数字を設定しないでください。'
 
     i = 1
     principal = int (principal)
