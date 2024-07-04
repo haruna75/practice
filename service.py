@@ -44,8 +44,8 @@ def compound_interest ( principal, rate, period ):
     if period < 0:
         return 'エラー：期間にマイナスの数字を設定しないでください。'
 
-    i = 1
-    while period + 1 > i:
+    i = 0
+    while period > i:
         principal = principal + principal * rate / 100
         i = i + 1
 
