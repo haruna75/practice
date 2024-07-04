@@ -1,13 +1,13 @@
 def compound_interest ( principal, rate, period ):
 
     if principal.isdigit() == False:
-        print ('エラーです')
+        print ('エラー：元本には数字を設定してください。')
 
     elif rate.isdigit() == False:
-        print ('エラーです')
+        print ('エラー：複利には数字を設定してください。')
 
     elif period.isdigit() == False:
-        print ('エラーです')
+        print ('エラー：期間には数字を設定してください。')
 
     else:
         i = 1
