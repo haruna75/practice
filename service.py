@@ -16,6 +16,20 @@ def compound_interest ( principal, rate, period ):
     
     if not is_num(period):
         return 'エラー：期間には数字を設定してください。'
+    
+    def is_int(value):
+        try:
+            int(value)
+        except ValueError:
+            return False
+        else:
+            return True
+
+    if not is_int(principal):
+        return 'エラー：元本には整数を指定してください。'
+    
+    if not is_int(period):
+        return 'エラー：期間には整数を指定してください。'
 
     principal = int (principal)
     rate = float (rate)
