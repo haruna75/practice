@@ -17,14 +17,13 @@ def compound_interest ( principal, rate, period ):
     if not is_num(period):
         return 'エラー：期間には数字を設定してください。'
 
-    else:
-        i = 1
-        principal = int (principal)
-        rate = int (rate)
-        period = int (period)
-    
-        while period + 1 > i:
-            principal = principal + principal * rate / 100
-            i = i + 1
+    principal = int (principal)
+    rate = int (rate)
+    period = int (period)
 
-        return principal
+    i = 1
+    while period + 1 > i:
+        principal = principal + principal * rate / 100
+        i = i + 1
+
+    return principal
