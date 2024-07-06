@@ -46,7 +46,7 @@ def compound_interest ( principal, rate, period ):
 
     i = 0
     while period > i:
-        principal = principal + principal * rate / 100
-        i = i + 1
+        principal += principal * rate / 100
+        i += 1
 
     return principal
