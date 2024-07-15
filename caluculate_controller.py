@@ -1,8 +1,17 @@
-import service
+from flask import Flask, render_template, request
+import caluculate_service
 
-print ('複利計算を始めましょう！ただし、複利が発生するのは1年ごととします！')
-principal_user = input ('元本を教えてください：')
-rate_user = input ('複利が何％か教えてください：')
-period_user = input ('何年分の計算をしますか？：')
+app = Flask(__name__)
 
-result = service.compound_interest(principal_user, rate_user, period_user)
+@app.route('/caluculate')
+def caluculate_query():
+    principal_user = request.args.get('principal')
+    rate_user = request.args.get('rate')
+    period_user = request.args.get('period')
+
+    result = caluculate_service.compound_interest(principal_user, rate_user, period_user)
+
+    return render_template ('test.html', principal=principal_user, rate=rate_user, period=period_user, result=result)
+
+if __name__ == '__main__':
+    app.run(debug=True)
