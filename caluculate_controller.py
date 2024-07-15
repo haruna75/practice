@@ -11,7 +11,7 @@ def caluculate_query():
 
     result = caluculate_service.compound_interest(principal_user, rate_user, period_user)
 
-    return render_template ('test.html', principal=principal_user, rate=rate_user, period=period_user, result=result)
+    return render_template ('index.html', principal=principal_user, rate=rate_user, period=period_user, result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)
